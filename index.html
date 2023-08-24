@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css">
+    <title>Shopping App</title>
+    <link rel="icon" href="./assets/icon-192.png" type="image/x-icon">
+    <script src="./dexie.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', ()=>{
+                navigator.serviceWorker.register('/sw.js')
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <p>My List</p>
+    </nav>
+
+    <div class="container">
+        <form id="itemForm">
+         <label>
+            Name of Item:
+            <input id="nameInput" type="text" required>
+         </label>
+
+         <label>
+            Quantity:
+            <input id="quantityInput" type="number" value=1>
+         </label>
+
+         <label>
+            Price:
+            <input id="priceInput" type="text" value=0>
+         </label>
+
+         <button id="addItemButton" type="submit">Add Item</button>
+        </form>
+    </div>
+
+    <!-- Diplay the items -->
+<div id="allItems">
+    <div id="itemsDiv"></div>
+    <div id="totalPriceDiv"></div>
+
+</div>
+    <script src="./app.js"></script>
+</body>
+</html>
+
+
+
+   <!-- <div class="item">
+            <label>
+                <input class="checkbox" type="checkbox" checked>
+            </label>
+
+            <div class="itemInfo">
+                <p>Fruit Juice</p>
+                <p>$5 * 3</p>
+            </div>
+
+            <button class="deleteButton">X</button>
+        </div>
+
+        <div class="item purchased" >
+            <label>
+                <input class="checkbox" type="checkbox" checked>
+            </label>
+
+            <div class="itemInfo">
+                <p>Fruit Juice</p>
+                <p>$5 * 3</p>
+            </div>
+
+            <button class="deleteButton">X</button>
+        </div> -->
